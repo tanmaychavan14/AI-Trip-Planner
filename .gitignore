@@ -28,6 +28,7 @@ dist-ssr
 
 # Generated files
 components.json
+eslint.config.js
 
 # Ignore lockfile 
 package-lock.json
