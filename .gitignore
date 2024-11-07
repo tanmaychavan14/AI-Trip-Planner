@@ -32,3 +32,6 @@ eslint.config.js
 
 # Ignore lockfile 
 package-lock.json
+
+.env
+.env.local
