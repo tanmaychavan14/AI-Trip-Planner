@@ -40,10 +40,7 @@ export const chatSession = model.startChat({
             "hotelAddress": "301 Fremont Street, Las Vegas, NV 89101",
             "price": "$50-$100 per night",
             "hotelImageUrl": "https://www.theDcasino.com/images/hero/main-hero-02.jpg",
-            "geoCoordinates": {
-                "latitude": 36.1695,
-                "longitude": -115.1438
-            },
+            "geoCoordinates": "36.1695, -115.1438",
             "rating": "3.5 stars",
             "description": "A budget-friendly hotel located in downtown Las Vegas with a retro vibe."
         }
@@ -57,10 +54,7 @@ export const chatSession = model.startChat({
                     "placeName": "Fremont Street Experience",
                     "placeDetails": "A pedestrian-friendly street in downtown Las Vegas with a canopy of lights and street performers. It's a great place to start your trip and get a feel for the city's energy.",
                     "placeImageUrl": "https://www.fremontstreetexperience.com/images/fremont-street-experience.jpg",
-                    "geoCoordinates": {
-                        "latitude": 36.1695,
-                        "longitude": -115.1438
-                    },
+                    "geoCoordinates": "36.1695,-115.1438",
                     "ticketPricing": "Free",
                     "timeToTravel": "1 hour"
                 },
@@ -69,10 +63,7 @@ export const chatSession = model.startChat({
                     "placeName": "Bellagio Conservatory & Botanical Gardens",
                     "placeDetails": "A stunning indoor garden with seasonal displays.",
                     "placeImageUrl": "https://www.bellagio.com/content/dam/MGM/bellagio/Photos/conservatory/hero.jpg",
-                    "geoCoordinates": {
-                        "latitude": 36.1126,
-                        "longitude": -115.1766
-                    },
+                    "geoCoordinates": "36.1126, -115.1766",
                     "ticketPricing": "Free",
                     "timeToTravel": "20 minutes"
                 }
@@ -86,10 +77,7 @@ export const chatSession = model.startChat({
                     "placeName": "Red Rock Canyon",
                     "placeDetails": "A scenic desert area with hiking trails and breathtaking views.",
                     "placeImageUrl": "https://www.redrockcanyonlv.org/wp-content/uploads/2021/03/redrock.jpg",
-                    "geoCoordinates": {
-                        "latitude": 36.1352,
-                        "longitude": -115.4275
-                    },
+                    "geoCoordinates": "36.1352,-115.4275",
                     "ticketPricing": "$15 per vehicle",
                     "timeToTravel": "40 minutes"
                 }
@@ -103,10 +91,7 @@ export const chatSession = model.startChat({
                     "placeName": "The Strip",
                     "placeDetails": "A famous stretch of Las Vegas Boulevard lined with hotels, casinos, and attractions.",
                     "placeImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Las_Vegas_Strip.jpg",
-                    "geoCoordinates": {
-                        "latitude": 36.1147,
-                        "longitude": -115.1728
-                    },
+                    "geoCoordinates": "36.1147,-115.1728",
                     "ticketPricing": "Free",
                     "timeToTravel": "10 minutes"
                 }
