@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { toast } from 'sonner';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import { Input } from "@/components/ui/input"
 import { SelectBudgetOptions, SelectTravelOptions } from '@/constants/options';
@@ -19,8 +20,8 @@ function CreateTrip() {
   }, [formData])
 
   const OnGenerateTrip = () => {
-    if (formData?.noOfDays > 20) {
-      console.log('Please enter a value less than 20');
+    if (formData?.noOfDays > 20 && !formData?.location || !formData?.budget || !formData?.people) {
+      toast("Please ensure all questions are answered!")
       return;
     }
     console.log(formData);
