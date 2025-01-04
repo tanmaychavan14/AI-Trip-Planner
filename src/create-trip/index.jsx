@@ -5,10 +5,19 @@ import { Input } from "@/components/ui/input"
 import { AI_PROMPT, SelectBudgetOptions, SelectTravelOptions } from '@/constants/options';
 import { Button } from '@/components/ui/button';
 import { chatSession } from '@/service/AIModel';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
+
 
 function CreateTrip() {
   const [place, setPlace] = useState();
   const [formData, setFormData] = useState([]);
+  const [openDialog, setOpenDialog] = useState(false);
   const handleInputChange = (name, value) => {
     setFormData({
       ...formData,
@@ -21,6 +30,13 @@ function CreateTrip() {
   }, [formData])
 
   const OnGenerateTrip = async () => {
+    const user = localStorage.getItem('user');
+
+    if (!user) {
+      setOpenDialog(true);
+      return;
+    }
+
     if (formData?.noOfDays > 20 && !formData?.location || !formData?.budget || !formData?.people) {
       toast("Please ensure all questions are answered!")
       return;
@@ -107,8 +123,24 @@ function CreateTrip() {
           <Button
             className='bg-[#6b493c] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]'
             onClick={OnGenerateTrip}
-          >Generate Trip</Button>
+          >Generate Trip
+          </Button>
         </div>
+
+        <Dialog open={openDialog}>
+
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Are you absolutely sure?</DialogTitle>
+              <DialogDescription>
+                <img src="/logo.svg"/>
+                <h2 className='font-bold text-lg mt-7'>Sign In with Google</h2>
+                <p>Sign in to the app with Google Authentication</p>
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+
       </div>
 
     </div >
