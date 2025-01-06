@@ -1,9 +1,9 @@
-import React from 'react'
 
-function InfoSection({trip}) {
+
+function InfoSection() {
   return (
     <div>
-        
+
     </div>
   )
 }

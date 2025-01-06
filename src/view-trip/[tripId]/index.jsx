@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/service/firebaseConfig';
 import { toast } from 'sonner';
-import InfoSection from '@/components/InfoSection';
+import InfoSection from '@/view-trip/components/InfoSection';
 
 function ViewTrip() {
 
