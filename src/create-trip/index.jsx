@@ -17,12 +17,14 @@ import {
 } from "@/components/ui/dialog";
 import { FcGoogle } from "react-icons/fc";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
 
 function CreateTrip() {
   const [place, setPlace] = useState();
   const [formData, setFormData] = useState([]);
   const [openDialog, setOpenDialog] = useState(false);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleInputChange = (name, value) => {
     setFormData({
@@ -98,6 +100,7 @@ function CreateTrip() {
     });
 
     setLoading(false);
+    navigate('/view-trip/' + docId)
   }
 
 
