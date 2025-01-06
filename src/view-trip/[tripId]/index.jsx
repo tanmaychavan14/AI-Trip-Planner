@@ -1,18 +1,44 @@
 import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from '@/service/firebaseConfig'; // Adjust the path to your firebase configuration file
+import { db } from '@/service/firebaseConfig';
+import { toast } from 'sonner';
 
 function ViewTrip() {
 
-const {tripId} = useParams();
+    const { tripId } = useParams();
+    const [trip, setTrip] = useState([]);
 
-const GetTripData =async()=> {
-    const docRef=doc(db, 'AITrips', tripId);
-    const docSnap = await getDoc(docRef);
-}
-  return (
-    <div> ViewTrip: {tripId}</div>
-  )
+    useEffect(() => {
+        tripId && GetTripData();
+    }, [tripId])
+
+    /**
+     * Used to get trip information form the firebase db 
+     */
+    const GetTripData = async () => {
+        const docRef = doc(db, 'AITrips', tripId);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            console.log('Document:', docSnap.data());
+            setTrip(docSnap.data());
+        } else {
+            console.log('No trip found!');
+            toast('No trip found!');
+        }
+    }
+    return (
+        <div> 
+            {/*Information Section/Image*/}
+
+            {/*Recommended Hotels */}
+
+            {/*Daily Itinerary */}
+
+            {/*Footer*/}
+        </div>
+    )
 }
 
 export default ViewTrip
