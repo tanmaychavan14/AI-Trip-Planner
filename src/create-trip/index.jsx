@@ -10,9 +10,8 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
-
+} from "@/components/ui/dialog";
+import "./index.css";
 
 function CreateTrip() {
   const [place, setPlace] = useState();
@@ -33,6 +32,7 @@ function CreateTrip() {
     const user = localStorage.getItem('user');
 
     if (!user) {
+      console.log('Opening dialog');
       setOpenDialog(true);
       return;
     }
@@ -53,6 +53,10 @@ function CreateTrip() {
 
     console.log(result?.response?.text());
   }
+
+  useEffect(() => {
+    console.log("Dialog state: ", openDialog);
+  }, [openDialog]);
 
   return (
     <div className="flex justify-center">
@@ -128,24 +132,19 @@ function CreateTrip() {
         </div>
 
         <Dialog open={openDialog}>
-
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Are you absolutely sure?</DialogTitle>
               <DialogDescription>
-                <img src="/logo.svg"/>
+                <img src="/logo.svg" width={150} />
                 <h2 className='font-bold text-lg mt-7'>Sign In with Google</h2>
-                <p>Sign in to the app with Google Authentication</p>
+                <p>Continue with Google Authentication</p>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
         </Dialog>
-
       </div>
-
-    </div >
-
-  )
+    </div>
+  );
 }
 
 export default CreateTrip
