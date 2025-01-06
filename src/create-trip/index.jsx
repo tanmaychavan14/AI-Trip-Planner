@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useGoogleLogin } from '@react-oauth/google';
 import { toast } from 'sonner';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import { Input } from "@/components/ui/input"
@@ -11,7 +13,7 @@ import {
   DialogDescription,
   DialogHeader,
 } from "@/components/ui/dialog";
-import "./index.css";
+import { FcGoogle } from "react-icons/fc";
 
 function CreateTrip() {
   const [place, setPlace] = useState();
@@ -27,6 +29,11 @@ function CreateTrip() {
   useEffect(() => {
     console.log(formData);
   }, [formData])
+
+  const login = useGoogleLogin({
+    onSuccess: (codeResp) => GetUserProfile(codeResp),
+    onError: (error)=> console.log(error)
+  })
 
   const OnGenerateTrip = async () => {
     const user = localStorage.getItem('user');
@@ -53,6 +60,22 @@ function CreateTrip() {
 
     console.log(result?.response?.text());
   }
+
+  const GetUserProfile = (tokenInfo) =>{
+    axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${tokenInfo?.access_token}`, {
+    header: {
+      Authorization: `Bearer ${tokenInfo?.access_token}`,
+      Accept: 'Application/json'
+    }
+  }).then((resp)=>{
+    console.log(resp);
+    localStorage.setItem('user', JSON.stringify(resp.data));
+    setOpenDialog(false);
+    OnGenerateTrip();
+  })
+      
+}
+  
 
   useEffect(() => {
     console.log("Dialog state: ", openDialog);
@@ -136,8 +159,14 @@ function CreateTrip() {
             <DialogHeader>
               <DialogDescription>
                 <img src="/logo.svg" width={150} />
-                <h2 className='font-bold text-lg mt-7'>Sign In with Google</h2>
-                <p>Continue with Google Authentication</p>
+                <h2 className='font-bold text-lg mt-5'>Continue with Google Authentication</h2>
+
+                <Button 
+                onClick={login}
+                className="w-full mt-5 bg-[#6b493c] text-white hover:border-[#291813] flex gap-2 items-center">
+                  <FcGoogle className="w-6"/>
+                  Sign In With Google
+                </Button>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
