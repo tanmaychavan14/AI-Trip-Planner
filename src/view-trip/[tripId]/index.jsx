@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/service/firebaseConfig';
 import { toast } from 'sonner';
+import InfoSection from '@/components/InfoSection';
 
 function ViewTrip() {
 
@@ -31,7 +32,7 @@ function ViewTrip() {
     return (
         <div> 
             {/*Information Section/Image*/}
-
+            <InfoSection trip={trip} />
             {/*Recommended Hotels */}
 
             {/*Daily Itinerary */}
