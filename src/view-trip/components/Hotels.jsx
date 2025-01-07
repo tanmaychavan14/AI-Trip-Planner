@@ -1,4 +1,6 @@
 
+import { Link } from 'react-router-dom';
+
 function Hotels({trip}) {
   return (
     <div>
@@ -10,7 +12,8 @@ function Hotels({trip}) {
 
            {trip?.tripData?.hotels?.map((hotel, index) => (
 
-                // eslint-disable-next-line react/jsx-key
+            // eslint-disable-next-line react/jsx-key
+            <Link to={'https://www.google.com/maps/search/?api=1&query=centurylink+field' + hotel?.hotelAddress} target="_blank">
                 <div className="hover:scale-105 transition-all cursor-pointer">   
                     <img src="/assets/placeholder.png"  className="rounded-xl"/>
                     
@@ -24,6 +27,7 @@ function Hotels({trip}) {
 
                     </div>
                  </div>
+                 </Link>
 
            ))}
 
