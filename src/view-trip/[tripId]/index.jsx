@@ -4,6 +4,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/service/firebaseConfig';
 import { toast } from 'sonner';
 import InfoSection from '@/view-trip/components/InfoSection';
+import Hotels from '@/view-trip/components/Hotels';
 
 function ViewTrip() {
 
@@ -31,9 +32,14 @@ function ViewTrip() {
     }
     return (
         <div className='p-10 md:px-20 lg:px-44 xl: px-56'> 
+
             {/*Information Section/Image*/}
+
             <InfoSection trip={trip} />
+
             {/*Recommended Hotels */}
+
+            <Hotels trip={trip} />
 
             {/*Daily Itinerary */}
 
