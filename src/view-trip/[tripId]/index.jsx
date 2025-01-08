@@ -5,6 +5,8 @@ import { db } from '@/service/firebaseConfig';
 import { toast } from 'sonner';
 import InfoSection from '@/view-trip/components/InfoSection';
 import Hotels from '@/view-trip/components/Hotels';
+import Itinerary from '@/view-trip/components/Itinerary';
+import Footer from '@/view-trip/components/Footer';
 
 function ViewTrip() {
 
@@ -43,7 +45,11 @@ function ViewTrip() {
 
             {/*Daily Itinerary */}
 
+            <Itinerary trip={trip} />
+
             {/*Footer*/}
+
+            <Footer trip ={trip}/>
         </div>
     )
 }

@@ -25,7 +25,7 @@ export const chatSession = model.startChat({
             parts: [
                 {
                     text: `Generate Travel Plan for Location: Las Vegas, for 3 Days for a Couple with a Cheap budget. 
-                    Include hotel options and a detailed itinerary in JSON format.`,
+                    Include many hotel options and a detailed itinerary in JSON format.`,
                 },
             ],
         },
@@ -42,7 +42,16 @@ export const chatSession = model.startChat({
             "hotelImageUrl": "https://www.theDcasino.com/images/hero/main-hero-02.jpg",
             "geoCoordinates": "36.1695, -115.1438",
             "rating": "3.5 stars",
-            "description": "A budget-friendly hotel located in downtown Las Vegas with a retro vibe."
+            "description": "A budget-friendly hotel located in downtown Las Vegas with a retro vibe. It features a casino, a pool, and several dining options."
+        },
+        {
+            "hotelName": "Circus Circus Hotel",
+            "hotelAddress": "2880 S Las Vegas Blvd, Las Vegas, NV 89109",
+            "price": "$30-$80 per night",
+            "hotelImageUrl": "https://www.circuscircus.com/images/hero.jpg",
+            "geoCoordinates": "36.1372, -115.1628",
+            "rating": "3 stars",
+            "description": "Affordable lodging with a lively atmosphere. Features a theme park, casino, and multiple restaurants."
         }
     ],
     "itinerary": [
@@ -56,7 +65,7 @@ export const chatSession = model.startChat({
                     "placeImageUrl": "https://www.fremontstreetexperience.com/images/fremont-street-experience.jpg",
                     "geoCoordinates": "36.1695,-115.1438",
                     "ticketPricing": "Free",
-                    "timeToTravel": "1 hour"
+                    "timeToExplore": "2-3 hours"
                 },
                 {
                     "time": "1:00 PM - 3:00 PM",
@@ -65,7 +74,7 @@ export const chatSession = model.startChat({
                     "placeImageUrl": "https://www.bellagio.com/content/dam/MGM/bellagio/Photos/conservatory/hero.jpg",
                     "geoCoordinates": "36.1126, -115.1766",
                     "ticketPricing": "Free",
-                    "timeToTravel": "20 minutes"
+                    "timeToExplore": "1-2 hours"
                 }
             ]
         },
@@ -79,7 +88,7 @@ export const chatSession = model.startChat({
                     "placeImageUrl": "https://www.redrockcanyonlv.org/wp-content/uploads/2021/03/redrock.jpg",
                     "geoCoordinates": "36.1352,-115.4275",
                     "ticketPricing": "$15 per vehicle",
-                    "timeToTravel": "40 minutes"
+                    "timeToExplore": "2-3 hours (depending on hiking)"
                 }
             ]
         },
@@ -93,7 +102,7 @@ export const chatSession = model.startChat({
                     "placeImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Las_Vegas_Strip.jpg",
                     "geoCoordinates": "36.1147,-115.1728",
                     "ticketPricing": "Free",
-                    "timeToTravel": "10 minutes"
+                    "timeToExplore": "3-4 hours (or more depending on activities)"
                 }
             ]
         }
