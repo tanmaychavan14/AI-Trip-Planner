@@ -22,4 +22,4 @@ function PlaceCard({place}) {
   )
 }
 
-export default PlaceCard
+export default PlaceCard 

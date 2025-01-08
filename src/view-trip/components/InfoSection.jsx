@@ -1,10 +1,36 @@
 import { Button } from '@/components/ui/button';
 import { FiShare } from "react-icons/fi";
+import { GetPlaceDetails } from '@/service/GlobalAPI';
+import { useEffect, useState } from 'react';
+
+const PHOTO_REF_URL ='https://places.googleapis.com/v1/{NAME}/media?maxHeightPx=1000&maxWidthPx=1000&key=' + import.meta.env.VITE_GOOGLE_PLACE_API_KEY
 
 function InfoSection({ trip }) {
+
+  const [photoURL, setPhotoURL] = useState();
+
+  useEffect(() => {
+    trip&&GetPlacePhoto();
+  }, [trip]);
+  
+  const GetPlacePhoto=async()=> {
+
+    const data= {
+       textQuery: trip?.userSelection?.location?.label,
+    }
+
+    const result = await GetPlaceDetails(data).then(resp => {
+      console.log(resp.data.places[0].photos[3].name);
+
+      const photoURL = PHOTO_REF_URL.replace('{NAME}', resp.data.places[0].photos[3].name);
+      setPhotoURL(photoURL);
+    })
+
+  }
+
   return (
     <div>
-      <img src='/assets/placeholder.png' className='h-[350px] w-full object-cover rounded-xl' />
+      <img src={photoURL} className='h-[350px] w-full object-cover rounded-xl' />
 
       <div className="flex justify-between items-center">
         <div className="my-5 flex flex-col gap-2">
