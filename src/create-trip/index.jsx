@@ -190,7 +190,7 @@ function CreateTrip() {
           <DialogContent>
             <DialogHeader>
               <DialogDescription>
-                <img src="/logo.svg" width={150} />
+                <img src="/assets/logo.svg" width={150} />
                 <h2 className='font-bold text-lg mt-5'>Continue with Google Authentication</h2>
 
                 <Button
