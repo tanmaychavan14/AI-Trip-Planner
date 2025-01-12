@@ -3,7 +3,7 @@ import { FiShare } from "react-icons/fi";
 import { GetPlaceDetails } from '@/service/GlobalAPI';
 import { useEffect, useState } from 'react';
 
-const PHOTO_REF_URL ='https://places.googleapis.com/v1/{NAME}/media?maxHeightPx=1000&maxWidthPx=1000&key=' + import.meta.env.VITE_GOOGLE_PLACE_API_KEY
+import { PHOTO_REF_URL } from '@/service/GlobalAPI';
 
 function InfoSection({ trip }) {
 
@@ -30,7 +30,7 @@ function InfoSection({ trip }) {
 
   return (
     <div>
-      <img src={photoURL} className='h-[350px] w-full object-cover rounded-xl' />
+      <img src={photoURL?photoURL: "/assets/placeholder.png"} className='h-[350px] w-full object-cover rounded-xl' />
 
       <div className="flex justify-between items-center">
         <div className="my-5 flex flex-col gap-2">

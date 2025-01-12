@@ -1,5 +1,3 @@
-
-
 import PlaceCard from '@/view-trip/components/PlaceCard';
 
 function Itinerary({trip}) {

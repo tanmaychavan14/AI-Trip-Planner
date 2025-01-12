@@ -1,6 +1,14 @@
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
+import { useEffect } from 'react';
 
 function Header() {
+
+const user=JSON.parse(localStorage.getItem('user'));
+
+useEffect(()=>{
+  console.log(user);
+})
+
   return (
     <div className='p-2 shadow-md flex justify-between items-center px-5'>
       <img src='/assets/logo.svg' width={150} />
