@@ -26,10 +26,12 @@ function MyTrips() {
             return;
         }
 
-        setUserTrips([]);
+       
         const q = query(collection(db, 'AITrips'), where('userEmail', '==', user?.email));
 
         const querySnapshot = await getDocs(q);
+
+        setUserTrips([]);
 
         querySnapshot.forEach((doc) => {
 
@@ -43,12 +45,25 @@ function MyTrips() {
             <h2 className="font-bold text-3xl">My Trips</h2>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-3"> 
-              {userTrips.map((trip, index)=> (
+              {userTrips?.length> 0 ? userTrips.map((trip, index)=> (
                 
-                // eslint-disable-next-line react/jsx-key
-                <UserTripCard trip={trip} />
+                 
+                <UserTripCard trip={trip} key={index}/>
 
-              ))}
+              ))
+            
+              :
+
+              [1,2,3,4,5,6].map((item, index) => (
+
+                <div key={index} className="h-[250px] w-full bg-slate-200 animate-pulse rounded-xl">
+                
+
+                </div>
+
+              ))
+            
+            }
             </div>
         </div>
     )

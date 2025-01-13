@@ -43,7 +43,7 @@ function Header() {
       console.log(resp);
       localStorage.setItem('user', JSON.stringify(resp.data));
       setOpenDialog(false);
-      window.location.reload(); 
+      window.location.reload();
     })
 
   }
@@ -56,11 +56,16 @@ function Header() {
         {user ?
 
           <div className='flex items-center gap-5'>
-            
-            <a href="/my-trips">
-            <Button variant="outline" className="bg-[#6b493c] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545] rounded-full">My Trips</Button>
+
+            <a href="/create-trip">
+              <Button variant="outline" className="bg-[#6b493c] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545] rounded-full">+ Create Trip</Button>
             </a>
-            
+
+
+            <a href="/my-trips">
+              <Button variant="outline" className="bg-[#6b493c] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545] rounded-full">My Trips</Button>
+            </a>
+
             <Popover>
               <PopoverTrigger>
                 <img src={user?.picture} className=" h-[35px] w-[35px] rounded-full" />
