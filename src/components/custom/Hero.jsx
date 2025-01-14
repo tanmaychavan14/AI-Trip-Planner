@@ -67,7 +67,7 @@ function Hero() {
     
     style={{ 
       width: '100vw', 
-        height: '91vh',
+        height: '92vh',
         backgroundImage: `url(${imageList[currentImage]})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
