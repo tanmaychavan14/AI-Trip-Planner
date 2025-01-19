@@ -49,7 +49,7 @@ function MyTrips() {
               {userTrips?.length> 0 ? userTrips.map((trip, index)=> (
                 
                  
-                <UserTripCard trip={trip} key={index}/>
+                <UserTripCard trip={trip} index={index} key={index}/>
 
               ))
             
