@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '../ui/button';
 import { Link } from 'react-router-dom';
 import './Hero.css';
@@ -8,6 +8,8 @@ function Hero() {
 
   const [currentImage, setCurrentImage] = useState(0);
   const [fade, setFade] = useState(false);
+  const [buttonPressed, setButtonPressed] = useState(false);
+  const timeoutRef = useRef(null);
 
   const imageList = [
     '/assets/background/image1.png',
@@ -47,7 +49,6 @@ function Hero() {
     '/assets/background/image35.png',
   ];
 
-  const timeoutRef = useRef(null);
 
   useEffect(() => {
     timeoutRef.current = setInterval(() => {
@@ -60,6 +61,11 @@ function Hero() {
 
     return () => clearInterval(timeoutRef.current);
   }, []);
+
+  const handleButtonPress = () => {
+    setButtonPressed(true);
+    setTimeout(() => setButtonPressed(false), 100); // Reset after 100ms
+  };
 
 
   return (
@@ -77,13 +83,13 @@ function Hero() {
 
       <div
         style={{
-          backdropFilter: 'blur(3px)', // Creates the blur effect
-          backgroundColor: 'rgba(255, 255, 255, 0.5)', // Semi-transparent white background
-          borderRadius: '15px', // Rounded corners
-          padding: '30px', // Padding around the text
-          margin: 'auto', // Centers the container
-          maxWidth: '100%', // Maximum width of the container
-          boxShadow: '2px 4px 5px rgba(0, 0, 0, 0.3)', // Subtle shadow for a lifted effect
+          backdropFilter: 'blur(3px)', 
+          backgroundColor: 'rgba(255, 255, 255, 0.5)',
+          borderRadius: '15px', 
+          padding: '30px', 
+          margin: 'auto', 
+          maxWidth: '100%', 
+          boxShadow: '2px 4px 5px rgba(0, 0, 0, 0.3)', 
           marginTop: '200px'
         }}
       >
@@ -97,7 +103,14 @@ function Hero() {
      
         </div>
       <Link to={'/create-trip'}>
-        <Button className='bg-[#462F26] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]'>Begin Your Adventure Now!</Button>
+        <Button className='bg-[#462F26] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]'
+        onMouseDown={handleButtonPress}
+        onMouseUp={handleButtonPress}
+        style={{
+          transform: buttonPressed ? 'scale(0.95)' : 'scale(1)',
+          transition: 'transform 0.2s',
+        }}
+        >Begin Your Adventure Now!</Button>
       </Link>
     
     </div>
