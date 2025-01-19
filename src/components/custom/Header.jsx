@@ -49,7 +49,9 @@ function Header() {
   }
 
   return (
-    <div className='p-2 shadow-md flex justify-between items-center px-5'>
+    <div className='p-2 shadow-lg flex justify-between items-center px-5' 
+    style={{ zIndex: 2}}
+    >
       <img src='/assets/logo.svg' width={150} />
 
       <div>

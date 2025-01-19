@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '../ui/button';
 import { Link } from 'react-router-dom';
 import './Hero.css';
@@ -7,8 +7,9 @@ import './Hero.css';
 function Hero() {
 
   const [currentImage, setCurrentImage] = useState(0);
-  const [fade, setFade] = useState(false);
   const [buttonPressed, setButtonPressed] = useState(false);
+  const [fade, setFade] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const timeoutRef = useRef(null);
 
   const imageList = [
@@ -67,6 +68,10 @@ function Hero() {
     setTimeout(() => setButtonPressed(false), 100); // Reset after 100ms
   };
 
+  useEffect(() => {
+    setLoaded(true); 
+  }, []);
+
 
   return (
     <div className='flex flex-col items-center mx-50 gap-9'
@@ -79,18 +84,23 @@ function Hero() {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         transition: 'all 1s ease-in-out',
+        zIndex: -1,
       }} >
 
       <div
         style={{
           backdropFilter: 'blur(3px)',
-          backgroundColor: 'rgba(255, 255, 255, 0.5)',
-          borderRadius: '15px',
-          padding: '30px',
-          margin: 'auto',
-          maxWidth: '100%',
-          boxShadow: '2px 4px 5px rgba(0, 0, 0, 0.3)',
-          marginTop: '200px'
+          backgroundColor: 'rgba(255, 255, 255, 0.5)', 
+          borderRadius: '15px', 
+          padding: '30px', 
+          margin: 'auto', 
+          maxWidth: '100%', 
+          boxShadow: '2px 4px 5px rgba(0, 0, 0, 0.3)', 
+          marginTop: '200px',
+          marginBottom: '0px',
+          opacity: loaded ? 1 : 0,  
+          transition: 'opacity 1.5s ease-in',  
+
         }}
       >
         <h1
@@ -102,17 +112,16 @@ function Hero() {
         <p className='text-xl text-brown-300 text-center text-[#462F26] mt-5' style={{ fontFamily: 'Times New Roman, sans-serif', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>Seamlessly crafted itineraries that bring your travel aspirations to life</p>
 
       </div>
-
       <Link to={'/create-trip'}>
-        <Button className='bg-[#462F26] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]'
+      <Button
+          className='bg-[#462F26] text-white rounded hover:bg-[#805545] hover:text-white hover:border-[#805545]'
           onMouseDown={handleButtonPress}
           onMouseUp={handleButtonPress}
           style={{
             transform: buttonPressed ? 'scale(0.95)' : 'scale(1)',
             transition: 'transform 0.2s',
           }}
-        >
-          Begin Your Adventure Now!</Button>
+        >Begin Your Adventure Now!</Button>
       </Link>
 
     </div>
