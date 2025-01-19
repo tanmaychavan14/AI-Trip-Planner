@@ -6,7 +6,7 @@ function Hotels({ trip }) {
         <div>
 
 
-            <h2 className="font-bold text-xl mt-5"> Hotel Recommendations</h2>
+            <h2 className="text-2xl mt-5 text-[#271a14]" style={{fontWeight: 500}}><i>Hotel Recommendations</i></h2>
 
             <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
 

@@ -3,7 +3,7 @@ import PlaceCard from '@/view-trip/components/PlaceCard';
 function Itinerary({trip}) {
   return (
     <div>
-        <h2 className="font-bold text-lg mt-5">Daily Itinerary</h2>
+        <h2 className="text-2xl mt-10 text-[#271a14]" style={{fontWeight: 500}}><i>Daily Itinerary</i></h2>
 
         <div> 
             {trip.tripData?.itinerary.map((item, index) => (

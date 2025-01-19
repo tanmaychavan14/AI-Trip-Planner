@@ -37,7 +37,7 @@ function PlaceCard({place}) {
          <div> 
             <h2 className="font-bold text-lg">{place.placeName}</h2>
             <p className="text-sm text-gray-700">{place.placeDetails}</p>
-            <h2 className="text-md mt-2">⌛ {place.timeToExplore}</h2>
+            <h2 className="text-md mt-2 text-[black]">⌛ {place.timeToExplore}</h2>
             <h2 className="text-md mt-2">🎫 {place.ticketPricing}</h2>
             <Link to={'https://www.google.com/maps/search/?api=1&query=' + place.placeName} target="_blank">
             <Button className='font-normal text-md p-0'>↗️  Get Directions</Button>
