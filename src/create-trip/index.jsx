@@ -120,9 +120,9 @@ function CreateTrip() {
     <div className="flex justify-center">
       <div className='sm:px-10 md:px-32 lg:px-56 xl:px-10 px-5 mt-10'>
         <h2 className='font-bold text-blue-400 text-5xl' style={{ fontFamily: 'Monotype Corsiva, cursive' }}>Share Your Travel Preferences 🗺️🏝️</h2>
-        <p className='mt-3 text-[#4F5A2D] text-xl' style={{ fontWeight: 500 }}>Give a few details about what you like, and we’ll create a personalized itinerary that fits your travel style.</p>
+        <p className='mt-3 text-[#4F5A2D] text-xl' style={{ fontWeight: 500 }}>Give a few details about what you like, and we’ll create a personalized itinerary that fits your travel style!</p>
 
-        <div className='mt-20 flex flex-col gap-10'>
+        <div className='mt-12 flex flex-col gap-10'>
           <div>
             <h2 className='text-xl my-3 font-medium text-[#271a14]'>What is your preferred destination?</h2>
             <GooglePlacesAutocomplete
