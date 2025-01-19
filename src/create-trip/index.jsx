@@ -108,33 +108,42 @@ function CreateTrip() {
     console.log("Dialog state: ", openDialog);
   }, [openDialog]);
 
+  const customStyles = {
+    placeholder: (provided) => ({
+      ...provided,
+      color: '#844d31',
+      fontWeight: 500
+    })
+  };
+
   return (
     <div className="flex justify-center">
       <div className='sm:px-10 md:px-32 lg:px-56 xl:px-10 px-5 mt-10'>
-        <h2 className='font-bold text-blue-400 text-3xl'>Share Your Travel Preferences 🗺️🏝️</h2>
-        <p className='mt-3 text-amber-800 text-xl'>Give a few details about what you like, and we’ll create a personalized itinerary that fits your travel style.</p>
+        <h2 className='font-bold text-blue-400 text-5xl' style={{ fontFamily: 'Monotype Corsiva, cursive' }}>Share Your Travel Preferences 🗺️🏝️</h2>
+        <p className='mt-3 text-[#4F5A2D] text-xl' style={{ fontWeight: 500 }}>Give a few details about what you like, and we’ll create a personalized itinerary that fits your travel style.</p>
 
         <div className='mt-20 flex flex-col gap-10'>
           <div>
-            <h2 className='text-xl my-3 font-medium'>What is your preferred destination?</h2>
+            <h2 className='text-xl my-3 font-medium text-[#271a14]'>What is your preferred destination?</h2>
             <GooglePlacesAutocomplete
               apiKey={import.meta.env.VITE_GOOGLE_PLACE_API_KEY}
               selectProps={{
                 place,
-                onChange: (v) => { setPlace(v); handleInputChange('location', v) }
+                onChange: (v) => { setPlace(v); handleInputChange('location', v) },
+                styles: customStyles,
               }}
             />
           </div>
 
           <div>
-            <h2 className='text-xl my-3 font-medium'>How many days will your trip be?</h2>
+            <h2 className='text-xl my-3 font-medium text-[#271a14]'>How many days will your trip be?</h2>
             <Input placeholder={'3'} type='number'
               onChange={(e) => handleInputChange('noOfDays', e.target.value)}
             />
           </div>
 
           <div>
-            <h2 className='text-xl my-3 font-medium'>What is your budget?</h2>
+            <h2 className='text-xl my-3 font-medium text-[#271a14]'>What is your budget?</h2>
             <div className='grid grid-cols-3 gap-5 mt-5'>
               {SelectBudgetOptions.map((item, index) => (
                 <div
@@ -144,8 +153,8 @@ function CreateTrip() {
                     ${formData?.budget === item.title ? 'shadow-lg border-black' : ''
                     }`}>
                   <h2 className='text-4xl'>{item.icon}</h2>
-                  <h2 className='font-bold text-lg'>{item.title}</h2>
-                  <h2 className='text-sm text-gray-500 whitespace-pre-line'>{item.desc}</h2>
+                  <h2 className='font-bold text-lg text-[#271a14]'>{item.title}</h2>
+                  <h2 className='text-sm text-[#844d31] whitespace-pre-line' style={{ fontWeight: 500 }}>{item.desc}</h2>
                 </div>
 
               ))}
@@ -153,7 +162,7 @@ function CreateTrip() {
           </div>
 
           <div>
-            <h2 className='text-xl my-3 font-medium'>Who will you be traveling with?</h2>
+            <h2 className='text-xl my-3 font-medium text-[#271a14]'>Who will you be traveling with?</h2>
             <div className='grid grid-cols-3 gap-5 mt-5'>
               {SelectTravelOptions.map((item, index) => (
                 <div
@@ -163,8 +172,8 @@ function CreateTrip() {
                    ${formData?.people === item.people ? 'shadow-lg border-black' : ''
                     }`}>
                   <h2 className='text-4xl'>{item.icon}</h2>
-                  <h2 className='font-bold text-lg'>{item.title}</h2>
-                  <h2 className='text-sm text-gray-500 whitespace-pre-line'>{item.desc}</h2>
+                  <h2 className='font-bold text-lg text-[#271a14]'>{item.title}</h2>
+                  <h2 className='text-sm text-[#844d31] whitespace-pre-line' style={{ fontWeight: 500 }}>{item.desc}</h2>
                 </div>
 
               ))}
@@ -176,7 +185,7 @@ function CreateTrip() {
         <div className='my-10 justify-end flex'>
           <Button
             disabled={loading}
-            className='bg-[#6b493c] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]'
+            className='bg-[#462F26] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]'
             onClick={OnGenerateTrip}
           >
             {loading ?

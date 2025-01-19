@@ -60,12 +60,12 @@ function Header() {
           <div className='flex items-center gap-5'>
 
             <a href="/create-trip">
-              <Button variant="outline" className="bg-[#6b493c] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545] rounded-full">+ Create Trip</Button>
+              <Button variant="outline" className="bg-[#462F26] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545] rounded-full">+ Create Trip</Button>
             </a>
 
 
             <a href="/my-trips">
-              <Button variant="outline" className="bg-[#6b493c] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545] rounded-full">My Trips</Button>
+              <Button variant="outline" className="bg-[#462F26] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545] rounded-full">My Trips</Button>
             </a>
 
             <Popover>
@@ -85,7 +85,7 @@ function Header() {
 
           :
 
-          <Button onClick={() => setOpenDialog(true)} className='bg-[#6b493c] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]'>Sign In</Button>
+          <Button onClick={() => setOpenDialog(true)} className='bg-[#462F26] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]'>Sign In</Button>
 
         }
 
@@ -98,7 +98,7 @@ function Header() {
 
                 <Button
                   onClick={login}
-                  className="w-full mt-5 bg-[#6b493c] text-white hover:border-[#291813] flex gap-2 items-center">
+                  className="w-full mt-5 bg-[#462F26] text-white hover:border-[#291813] flex gap-2 items-center">
 
                   <FcGoogle className="w-6" />
                   Sign In With Google

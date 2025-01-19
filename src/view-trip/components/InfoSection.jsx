@@ -44,7 +44,7 @@ function InfoSection({ trip }) {
           </div>
         </div>
 
-        <Button className="bg-[#6b493c] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]"><FiShare /> Share Trip</Button>
+        <Button className="bg-[#462F26] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]"><FiShare /> Share Trip</Button>
       </div>
     </div>
   )
