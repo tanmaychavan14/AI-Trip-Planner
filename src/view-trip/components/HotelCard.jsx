@@ -41,10 +41,10 @@ function HotelCard({hotel}) {
                             </Link>
     
                             <div className="my-3 flex flex-col gap-2">
-                                <h2 className="font-medium">{hotel?.hotelName}</h2>
-                                <h2 className="text-xs text-[#844d31]"  style={{ fontWeight: 500 }}>📍{hotel?.hotelAddress}</h2>
-                                <h2 className="text-sm">💰{hotel?.price}</h2>
-                                <h2 className="text-sm">⭐{hotel?.rating}</h2>
+                                <h2 className="font-medium" style={{ fontWeight: 600 }}>{hotel?.hotelName}</h2>
+                                <h2 className="text-xs text-[#844d31]" style={{ fontWeight: 500 }}>📍{hotel?.hotelAddress}</h2>
+                                <h2 className="text-sm text-[#844d31]" style={{ fontWeight: 500 }}>💰{hotel?.price}</h2>
+                                <h2 className="text-sm text-[#844d31]" style={{ fontWeight: 500 }}>⭐{hotel?.rating}</h2>
                             </div>
                         </div>
   )

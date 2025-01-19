@@ -16,7 +16,7 @@ function Itinerary({trip}) {
                        // eslint-disable-next-line react/jsx-key
                        <div className="my-3">
 
-                          <h2 className='font-medium text-sm text-[#ff51f6]'>{place.time}</h2>
+                          <h2 className='font-medium text-sm text-[#4F5A2D]'>{place.time}</h2>
                            <PlaceCard place={place}/>
 
                        </div>

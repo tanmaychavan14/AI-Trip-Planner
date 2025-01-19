@@ -43,9 +43,9 @@ function MyTrips() {
 
     return (
         <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10 mb-10">
-            <h2 className="font-bold text-3xl text-[#271a14]">My Trips</h2>
+            <h2 className="font-bold text-5xl text-blue-400" style={{ fontFamily: 'Monotype Corsiva, cursive' }}>My Trips</h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10"> 
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8"> 
               {userTrips?.length> 0 ? userTrips.map((trip, index)=> (
                 
                  
