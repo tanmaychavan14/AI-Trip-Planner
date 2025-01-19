@@ -27,18 +27,20 @@ const [photoURL, setPhotoURL] = useState();
   }
 
   return (
-    <Link to ={'/view-trip/' + trip?.id} >
-    <div className = "hover:scale-105 transition-all hover:shadow-xl">
-      <img src={photoURL? photoURL : '/assets/placeholder.png'} className="object-cover rounded-xl mt-5 h-[250px]" />
-
-      <div>
-        <h2 className="font-bold text-lg">{trip?.userSelection?.location?.label}</h2>
-        <h2 className="text-sm text-gray-800"> {trip?.userSelection?.noOfDays} Day(s) trip with a {trip?.userSelection?.budget} Budget for {trip?.userSelection?.people} </h2>
-
+    <Link to={'/view-trip/' + trip?.id}>
+    <div className="hover:scale-105 transition-all hover:shadow-2xl" style={{ width: '100%', overflow: 'hidden', position: 'relative', padding: '12px', borderRadius: '10px'}}>
+      {/* Image Container */}
+      <div style={{ height: '230px', width: '100%', overflow: 'hidden', borderRadius: '10px' }}>
+        <img src={photoURL ? photoURL : '/assets/placeholder.png'} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Trip"/>
       </div>
 
+      {/* Details Container */}
+      <div style={{ marginTop: '5px'}}>
+        <h2 className="font-bold text-lg">{trip?.userSelection?.location?.label}</h2>
+        <h2 className="text-sm text-[#844d31] mt-1"> {trip?.userSelection?.noOfDays} Day(s) trip with a {trip?.userSelection?.budget} Budget for {trip?.userSelection?.people} </h2>
+      </div>
     </div>
-    </Link>
+  </Link>
   )
 }
 

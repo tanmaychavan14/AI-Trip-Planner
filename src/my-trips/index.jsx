@@ -3,6 +3,7 @@ import { db } from "@/service/firebaseConfig";
 import UserTripCard from '@/my-trips/components/UserTripCard';
 import { useEffect, useState } from 'react';
 import { useNavigation } from 'react-router-dom';
+import Footer from '@/components/custom/Footer';
 
 function MyTrips() {
 
@@ -41,10 +42,10 @@ function MyTrips() {
     }
 
     return (
-        <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10">
-            <h2 className="font-bold text-3xl">My Trips</h2>
+        <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10 mb-10">
+            <h2 className="font-bold text-3xl text-[#271a14]">My Trips</h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-3"> 
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10"> 
               {userTrips?.length> 0 ? userTrips.map((trip, index)=> (
                 
                  
@@ -66,6 +67,7 @@ function MyTrips() {
             }
             </div>
         </div>
+
     )
 }
 
