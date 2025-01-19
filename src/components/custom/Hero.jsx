@@ -83,13 +83,13 @@ function Hero() {
 
       <div
         style={{
-          backdropFilter: 'blur(3px)', 
+          backdropFilter: 'blur(3px)',
           backgroundColor: 'rgba(255, 255, 255, 0.5)',
-          borderRadius: '15px', 
-          padding: '30px', 
-          margin: 'auto', 
-          maxWidth: '100%', 
-          boxShadow: '2px 4px 5px rgba(0, 0, 0, 0.3)', 
+          borderRadius: '15px',
+          padding: '30px',
+          margin: 'auto',
+          maxWidth: '100%',
+          boxShadow: '2px 4px 5px rgba(0, 0, 0, 0.3)',
           marginTop: '200px'
         }}
       >
@@ -100,19 +100,21 @@ function Hero() {
           <span className="text-[#462F26]">Navigate Your Next Journey<br /><i style={{ fontFamily: 'Monotype Corsiva, cursive' }}>With The Power of AI</i></span><br />
         </h1>
         <p className='text-xl text-brown-300 text-center text-[#462F26] mt-5' style={{ fontFamily: 'Times New Roman, sans-serif', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>Seamlessly crafted itineraries that bring your travel aspirations to life</p>
-     
-        </div>
+
+      </div>
+
       <Link to={'/create-trip'}>
         <Button className='bg-[#462F26] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]'
-        onMouseDown={handleButtonPress}
-        onMouseUp={handleButtonPress}
-        style={{
-          transform: buttonPressed ? 'scale(0.95)' : 'scale(1)',
-          transition: 'transform 0.2s',
-        }}
-        >Begin Your Adventure Now!</Button>
+          onMouseDown={handleButtonPress}
+          onMouseUp={handleButtonPress}
+          style={{
+            transform: buttonPressed ? 'scale(0.95)' : 'scale(1)',
+            transition: 'transform 0.2s',
+          }}
+        >
+          Begin Your Adventure Now!</Button>
       </Link>
-    
+
     </div>
   )
 }
