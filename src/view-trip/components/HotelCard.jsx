@@ -36,13 +36,13 @@ function HotelCard({hotel}) {
     
                             <Link to={'https://www.google.com/maps/search/?api=1&query=' + hotel.hotelName + "," + hotel?.hotelAddress} target="_blank">
                                 <div className="absolute top-0 right-0">
-                                    <Button className="border-[#000000]"><FaLocationDot /></Button>
+                                    <Button className="border-[#844d31]"><FaLocationDot /></Button>
                                 </div>
                             </Link>
     
                             <div className="my-3 flex flex-col gap-2">
                                 <h2 className="font-medium">{hotel?.hotelName}</h2>
-                                <h2 className="text-xs text-gray-700">📍{hotel?.hotelAddress}</h2>
+                                <h2 className="text-xs text-[#844d31]"  style={{ fontWeight: 500 }}>📍{hotel?.hotelAddress}</h2>
                                 <h2 className="text-sm">💰{hotel?.price}</h2>
                                 <h2 className="text-sm">⭐{hotel?.rating}</h2>
                             </div>

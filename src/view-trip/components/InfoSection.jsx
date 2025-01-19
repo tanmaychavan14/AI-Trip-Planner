@@ -34,12 +34,12 @@ function InfoSection({ trip }) {
 
       <div className="flex justify-between items-center">
         <div className="my-5 flex flex-col gap-2">
-          <h2 className="font-bold text-2xl">{trip?.userSelection?.location?.label}</h2>
+          <h2 className="font-bold text-5xl mt-5 text-blue-400" style={{ fontFamily: 'Monotype Corsiva, cursive' }}>{trip?.userSelection?.location?.label}</h2>
 
-          <div className="flex gap-5">
-            <h2 className="p-1 px-3 bg-gray-200 rounded-full text-grey-600">📅 {trip.userSelection?.noOfDays} Day(s)</h2>
-            <h2 className="p-1 px-3 bg-gray-200 rounded-full text-grey-600">💲{trip.userSelection?.budget} Budget</h2>
-            <h2 className="p-1 px-3 bg-gray-200 rounded-full text-grey-600">👨‍👩‍👧‍👦 Number of Travelers: {trip.userSelection?.people}</h2>
+          <div className="flex gap-5 mt-3">
+            <h2 className="p-1 px-3 rounded-full bg-[#4F5A2D] text-[white]">📅 {trip.userSelection?.noOfDays} Day(s)</h2>
+            <h2 className="p-1 px-3 rounded-full bg-[#4F5A2D] text-[white]">💲{trip.userSelection?.budget} Budget</h2>
+            <h2 className="p-1 px-3 rounded-full bg-[#4F5A2D] text-[white]">👨‍👩‍👧‍👦 Number of Travelers: {trip.userSelection?.people}</h2>
 
           </div>
         </div>

@@ -36,7 +36,7 @@ const [photoURL, setPhotoURL] = useState();
 
       {/* Details Container */}
       <div style={{ marginTop: '5px'}}>
-        <h2 className="font-bold text-lg">{trip?.userSelection?.location?.label}</h2>
+        <h2 className="font-bold text-lg text-[#271a14]">{trip?.userSelection?.location?.label}</h2>
         <h2 className="text-sm text-[#844d31] mt-1"> {trip?.userSelection?.noOfDays} Day(s) trip with a {trip?.userSelection?.budget} Budget for {trip?.userSelection?.people} </h2>
       </div>
     </div>
