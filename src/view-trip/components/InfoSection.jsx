@@ -2,8 +2,8 @@ import { Button } from '@/components/ui/button';
 import { FiShare } from "react-icons/fi";
 import { GetPlaceDetails } from '@/service/GlobalAPI';
 import { useEffect, useState } from 'react';
-
 import { PHOTO_REF_URL } from '@/service/GlobalAPI';
+
 
 function InfoSection({ trip }) {
 
@@ -28,6 +28,23 @@ function InfoSection({ trip }) {
 
   }
 
+  const shareTrip = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Check out my trip!',
+          text: `I'm planning a trip to ${trip?.userSelection?.location?.label} for ${trip.userSelection?.noOfDays} days with a budget of ${trip.userSelection?.budget}. Would you like to join or have any suggestions?`,
+          url: window.location.href  
+        });
+        console.log('Trip shared successfully!');
+      } catch (error) {
+        console.error('Error sharing the trip:', error);
+      }
+    } else {
+      alert('Sharing is not supported on this browser. Please copy the URL.');
+    }
+  };
+
   return (
     <div>
       <img src={photoURL? photoURL: "/assets/placeholder.png"} className='h-[350px] w-full object-cover rounded-xl' />
@@ -43,7 +60,7 @@ function InfoSection({ trip }) {
           </div>
         </div>
 
-        <Button className="bg-[#462F26] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]"><FiShare /> Share Trip</Button>
+        <Button className="bg-[#462F26] text-white rounded  hover:bg-[#805545] hover:text-white hover:border-[#805545]" onClick={shareTrip}><FiShare /> Share Trip</Button>
       </div>
     </div>
   )
