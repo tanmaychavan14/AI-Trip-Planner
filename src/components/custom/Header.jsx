@@ -16,7 +16,10 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
+  DialogClose
 } from "@/components/ui/dialog";
+
+import { X } from "lucide-react"
 
 function Header() {
 
@@ -49,8 +52,8 @@ function Header() {
   }
 
   return (
-    <div className='p-2 shadow-lg flex justify-between items-center px-5' 
-    style={{ zIndex: 2}}
+    <div className='p-2 shadow-lg flex justify-between items-center px-5'
+      style={{ zIndex: 2 }}
     >
       <img src='/assets/logo.svg' width={150} />
 
@@ -94,6 +97,16 @@ function Header() {
             <DialogHeader>
               <DialogDescription>
                 <img src="/assets/logo.svg" width={150} />
+
+                <DialogClose onClick={() => {
+                  console.log('Closing dialog');
+                  setOpenDialog(false);
+                }} className="px-4 absolute right-4 top-4 rounded-md opacity-70 ring-offset-background transition-opacity hover:opacity-100 hover:ring-1 hover:ring-[#c2cbff] focus:outline-none focus:ring-ring focus:ring-offset-3 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+                  
+                  <X className="h-4 w-4" />
+                
+                </DialogClose>
+                
                 <h2 className='font-bold text-lg mt-5'>Continue with Google Authentication</h2>
 
                 <Button

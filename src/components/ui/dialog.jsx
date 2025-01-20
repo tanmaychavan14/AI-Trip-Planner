@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
-import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -42,11 +41,6 @@ const DialogContent = React.forwardRef(({ className, children, ...props }, ref) 
       )}
       {...props}>
       {children}
-      <DialogPrimitive.Close
-        className="px-3 absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 hover:ring-1 hover:ring-[#c2cbff] focus:outline-none focus:ring-ring focus:ring-offset-3 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-        <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
-      </DialogPrimitive.Close>
     </DialogPrimitive.Content>
   </DialogPortal>
 ))
@@ -54,6 +48,7 @@ DialogContent.displayName = DialogPrimitive.Content.displayName;
 DialogContent.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  setOpenDialog: PropTypes.func.isRequired,
 };
 
 const DialogHeader = ({
