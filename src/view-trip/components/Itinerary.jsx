@@ -10,7 +10,7 @@ function Itinerary({trip}) {
                 // eslint-disable-next-line react/jsx-key
                 <div className="mt-3"> 
                    
-                    <h2 className="font-medium text-xl text-[#271a14]" style={{fontWeight: 600}}>{item.day}</h2>
+                    <h2 className="font-medium text-xl text-[#271a14] mt-8" style={{fontWeight: 600}}>{item.day}</h2>
                     <div className="grid md:grid-cols-2 gap-5">
                     {item.plan.map((place, index) =>(
                        // eslint-disable-next-line react/jsx-key

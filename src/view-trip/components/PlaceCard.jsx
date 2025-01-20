@@ -30,9 +30,9 @@ function PlaceCard({place}) {
     }
 
   return (
-    <div className="border rounded-xl p-3 mt-2 flex gap-5 hover:scale-105 transition-all hover:shadow-md cursor-pointer">
+    <div className="border rounded-xl p-3 mt-2 flex gap-5 hover:scale-105 transition-all hover:shadow-md cursor-pointer"  style={{ width: '100%', minHeight: '200px' }}>
 
-        <img src={photoURL?photoURL: "/assets/placeholder.png"} className='w-[150px] h-[150px] rounded-xl object-cover'/>
+        <img src={photoURL?photoURL: "/assets/placeholder.png"} className='rounded-xl' style={{ width: '150px', height: '150px', objectFit: 'cover' }}/>
          
          <div> 
             <h2 className="font-bold text-lg text-[#271a14]">{place.placeName}</h2>
@@ -45,7 +45,7 @@ function PlaceCard({place}) {
 
          </div>
     
-    </div>
+    </div>  
   )
 }
 

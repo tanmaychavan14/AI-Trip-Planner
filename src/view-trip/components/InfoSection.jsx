@@ -37,10 +37,9 @@ function InfoSection({ trip }) {
           <h2 className="font-bold text-5xl mt-5 text-blue-400" style={{ fontFamily: 'Monotype Corsiva, cursive' }}>{trip?.userSelection?.location?.label}</h2>
 
           <div className="flex gap-5 mt-3">
-            <h2 className="p-1 px-3 rounded-full bg-[#4F5A2D] text-[white]">📅 {trip.userSelection?.noOfDays} Day(s)</h2>
-            <h2 className="p-1 px-3 rounded-full bg-[#4F5A2D] text-[white]">💲{trip.userSelection?.budget} Budget</h2>
-            <h2 className="p-1 px-3 rounded-full bg-[#4F5A2D] text-[white]">👨‍👩‍👧‍👦 Number of Travelers: {trip.userSelection?.people}</h2>
-
+            <h2 className="p-1 px-3 rounded-full bg-[#4F5A2D] text-[white] hover:scale-105 cursor-default">📅 {trip.userSelection?.noOfDays} Day(s)</h2>
+            <h2 className="p-1 px-3 rounded-full bg-[#4F5A2D] text-[white] hover:scale-105 cursor-default">💲{trip.userSelection?.budget} Budget</h2>
+            <h2 className="p-1 px-3 rounded-full bg-[#4F5A2D] text-[white] hover:scale-105 cursor-default">👨‍👩‍👧‍👦 Number of Travelers: {trip.userSelection?.people}</h2>
           </div>
         </div>
 
