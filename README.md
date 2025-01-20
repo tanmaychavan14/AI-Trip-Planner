@@ -1,1 +1,1 @@
-# AI Trip Planner 🏜🗺
+# AI Travel Planner 🏜🗺
