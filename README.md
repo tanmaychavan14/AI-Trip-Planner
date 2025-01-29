@@ -37,4 +37,9 @@ AI Travel Planner is a travel planning application designed to help users create
 4. Start the application:
     ```bash
     npm start
-    ```
+     ```
+
+## Video Demo: 
+
+https://github.com/user-attachments/assets/0714cc57-f2d7-4e2f-ad7c-8b1b7c0a400c
+
