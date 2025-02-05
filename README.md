@@ -1,4 +1,4 @@
-# AI Travel Planner 🏜🗺
+# Navigo - AI Travel Planner 🏜🗺
 
 ## Description
 
