@@ -2,7 +2,7 @@
 
 ## Description
 
-AI Travel Planner is a travel planning application designed to help users create personalized itineraries. By leveraging AI, it suggests hotel and activity options based on the users' preferences to simplify their travel planning experience.
+Navigo is a travel planning application designed to help users create personalized itineraries. By leveraging AI, it suggests hotel and activity options based on the users' preferences to simplify their travel planning experience.
 
 ## Features
 
