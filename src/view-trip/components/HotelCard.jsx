@@ -33,6 +33,14 @@ function HotelCard({hotel}) {
             <div className="relative hover:scale-105 transition-all cursor-pointer mt-5 hover:shadow-2xl" style={{position: 'relative', padding: '10px', borderRadius: '10px'}}>
     
                             <img src={photoURL?photoURL: "/assets/placeholder.png"} className="rounded-xl h-[220px] w-full object-cover" />
+
+                            {/* <img 
+    src={photoURL || hotel?.hotelImageUrl || "/assets/placeholder.png"} 
+    className="rounded-xl h-[220px] w-full object-cover" 
+    alt={hotel?.hotelName} */}
+/>
+
+
     
                             <Link to={'https://www.google.com/maps/search/?api=1&query=' + hotel.hotelName + "," + hotel?.hotelAddress} target="_blank">
                                 <div className="absolute top-0 right-0">

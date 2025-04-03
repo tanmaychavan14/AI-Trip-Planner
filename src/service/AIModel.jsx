@@ -139,7 +139,8 @@ export const chatSession = model.startChat({
             parts: [
                 {
                     text: `Generate Travel Plan for Location: Las Vegas, for 3 Days for a Couple with a Cheap budget. 
-                    Include many hotel options and a detailed itinerary in JSON format.`,
+                    Include many hotel options and a detailed itinerary in JSON format.Make sure all hotel and attraction image URLs are valid and publicly accessible. 
+Do not use placeholder URLs like "example.com`,
                 },
             ],
         },
@@ -152,7 +153,7 @@ export const chatSession = model.startChat({
         {
             "hotelName": "The D Las Vegas",
             "hotelAddress": "301 Fremont Street, Las Vegas, NV 89101",
-            "price": "$50-$100 per night",
+            "price": "₹4,150 - ₹8,300 per night",
             "hotelImageUrl": "https://www.theDcasino.com/images/hero/main-hero-02.jpg",
             "geoCoordinates": "36.1695, -115.1438",
             "rating": "3.5 stars",
@@ -161,7 +162,7 @@ export const chatSession = model.startChat({
         {
             "hotelName": "Circus Circus Hotel",
             "hotelAddress": "2880 S Las Vegas Blvd, Las Vegas, NV 89109",
-            "price": "$30-$80 per night",
+            "price": "₹2,490 - ₹6,640 per night",
             "hotelImageUrl": "https://www.circuscircus.com/images/hero.jpg",
             "geoCoordinates": "36.1372, -115.1628",
             "rating": "3 stars",
@@ -201,7 +202,7 @@ export const chatSession = model.startChat({
                     "placeDetails": "A scenic desert area with hiking trails and breathtaking views.",
                     "placeImageUrl": "https://www.redrockcanyonlv.org/wp-content/uploads/2021/03/redrock.jpg",
                     "geoCoordinates": "36.1352,-115.4275",
-                    "ticketPricing": "$15 per vehicle",
+                    "ticketPricing": "₹500 per vehicle",
                     "timeToExplore": "2-3 hours (depending on hiking)"
                 }
             ]
